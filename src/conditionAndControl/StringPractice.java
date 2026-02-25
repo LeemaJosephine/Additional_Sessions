@@ -120,7 +120,7 @@ public class StringPractice {
 		
 		// Password Validation
 		
-		String password ="admi123";
+		String password ="Admin	123";
 		
 		boolean hasUpper=false, hasDigit=false;
 		
