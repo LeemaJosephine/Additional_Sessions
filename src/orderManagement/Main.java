@@ -36,11 +36,25 @@ public class Main {
 		p2.setProduct(price_elec); // Encapsulation method
 		String result = p2.displayProduct(); // Method with return type
 		System.out.println(result);
+		double final_Price=p2.calculateDiscount(price_elec);
+		System.out.println("Final price after discount is: "+final_Price);
+		UPI pay = new UPI();
+		pay.pay(final_Price);
+		Order p4 = new Order();
+		p4.placeOrder(name_elec);
+		p4.generateInvoice();
+		
 		
 		Product p3 = new ClothingProduct(id_cloth, name_cloth, size);
 		p3.setProduct(price_cloth);
 		String res = p3.displayProduct();
 		System.out.println(res);
+		double final_price=p3.calculateDiscount(price_cloth);
+		System.out.println("Final price after discount is: "+final_price);
+		CreditCard credit = new CreditCard();
+		credit.pay(final_price);
+		p4.placeOrder(name_cloth, final_price);
+		p4.generateInvoice();
 		
 	}
 }

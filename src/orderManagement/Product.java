@@ -26,6 +26,14 @@ public class Product {
 		
 		return id + " " + name + " Rs. " + price;
 	}
+	
+	// Method overriding
+	public double calculateDiscount(double price) {
+		// TODO Auto-generated method stub
+		System.out.println("No Discount");
+		return price;
+	}
+	
 
 }
 
@@ -37,6 +45,17 @@ class ElectronicProduct extends Product{
 		super(id,name);
 		this.warranty=warranty;
 	}
+	
+	@Override
+	public double calculateDiscount(double price) {
+		double discount =price * 0.10;
+		double final_Price = price - discount;
+		System.out.println("10% discount on electronics");
+		
+		return final_Price;
+	}
+	
+	
 }
 
 class ClothingProduct extends Product{
@@ -46,6 +65,16 @@ class ClothingProduct extends Product{
 	public ClothingProduct(int id, String name, int size) {
 		super(id,name);
 		this.size=size;
+	}
+	
+	@Override
+	public double calculateDiscount(double price) {
+		
+		double discount =price * 0.20;
+		double final_Price = price - discount;
+		System.out.println("20% discount on Clothing");
+		
+		return final_Price;
 	}
 }
 
